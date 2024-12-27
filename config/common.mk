@@ -4,6 +4,11 @@ $(call inherit-product-if-exists, vendor/lineage/config/crdroid.mk)
 $(call inherit-product-if-exists, vendor/addons/config.mk)
 $(call inherit-product-if-exists, vendor/certification/config.mk)
 $(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
+# Vanilla and GMS
+WITH_GAPPS ?= true
+ifeq ($(WITH_GAPPS), true)
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+else
 
 PRODUCT_BRAND ?= crDroidAndroid
 
